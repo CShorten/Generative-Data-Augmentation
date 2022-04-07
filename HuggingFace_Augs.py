@@ -4,8 +4,8 @@ def get_model():
   model = transformers.AutoModelForCausalLM.from_pretrained("distilgpt2")
   
 
-def GPT2_sampler():
+def GPT2_sampler(model):
   from transformers import pipeline
-  pipe = pipeline("text-generation")
+  pipe = pipeline("text-generation", model=model)
   return pipe
   
